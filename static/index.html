@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Company Enrichment</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Hackathon pipeline</p>
+          <h1>Company Enrichment</h1>
+        </div>
+        <button id="showResultsBtn" class="secondary" type="button">Show All Results</button>
+      </section>
+
+      <section class="workspace">
+        <form id="enrichForm" class="panel">
+          <h2>Enrich Section</h2>
+          <label>
+            Website Name
+            <input id="websiteName" name="website_name" placeholder="Acme CRM" autocomplete="organization" />
+          </label>
+          <label>
+            Company URL
+            <input id="companyUrl" name="url" placeholder="https://example.com" required autocomplete="url" />
+          </label>
+          <button id="enrichBtn" type="submit">Enrich</button>
+          <p id="status" class="status" role="status"></p>
+        </form>
+
+        <section class="panel result-panel">
+          <h2>Latest Result</h2>
+          <div id="latestResult" class="empty">No result yet.</div>
+        </section>
+      </section>
+
+      <section class="panel results-section">
+        <div class="section-header">
+          <h2>Results Section</h2>
+          <span id="resultCount">0 records</span>
+        </div>
+        <div id="allResults" class="table-wrap">
+          <div class="empty">Click Show All Results to load saved companies.</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
